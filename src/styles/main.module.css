@@ -1,0 +1,186 @@
+.canvas {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #bddeff; /* 필요하면 배경색 지정 */
+  }
+  
+ .bg {
+    position: absolute;
+    width: 100vw;
+ }
+
+ .bgFilter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../public/images/filter.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 70%;
+  }
+
+  .img1 {
+    position: absolute;
+    width: 100vw;
+    z-index: 2;
+    top: 5%
+  }
+  
+  .img2 {
+    position: absolute;
+    width: 100vw;
+    top: 10%
+  }
+  
+  .img3 {
+    position: absolute;
+    width: 100vw;
+    top: 10%;
+  }
+
+  .img4 {
+    position: absolute;
+    width: 100vw;
+    top:10%;
+  }
+  
+  .img5 {
+    position: absolute;
+    width: 100vw;
+    top: 10%;
+  }
+
+  .img6 {
+    position: absolute;
+    width: 100vw;
+    top: 10%;
+  }
+
+  .img7 {
+    position: absolute;
+    width: 100vw;
+    top: 11%;
+  }
+
+  .img8 {
+    position: absolute;
+    width: 100vw;
+    top: 12%;
+  }
+
+  .img9 {
+    position: absolute;
+    width: 100vw;
+    top: 13%;
+  }
+
+  .img10 {
+    position: absolute;
+    width: 100vw;
+    top: 16%;
+  }
+
+  .img11 {
+    position: absolute;
+    width: 100vw;
+    top: 15%;
+  }
+
+  .img12 {
+    position: absolute;
+    width: 100vw;
+    top: 16%;
+  }
+  
+  .img13 {
+    position: absolute;
+    width: 100vw;
+    top: 16%;
+  }
+
+  .img14 {
+    position: absolute;
+    width: 100vw;
+    top: 16%;
+  }
+
+  .img15 {
+    position: absolute;
+    width: 100vw;
+    top: 16%;
+  }
+
+  .img16 {
+    position: absolute;
+    width: 100vw;
+    top: 16%;
+  }
+
+  .img17 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: -4%
+  }
+
+  .img18 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: -4%
+  }
+
+  .img19 {
+    position: absolute;
+    width: 100vw;
+    top: 35%
+  }
+
+  .img20 {
+    position: absolute;
+    width: 100vw;
+    top: 35%
+  }
+
+  .img21 {
+    position: absolute;
+    width: 100vw;
+    top: 35%
+  }
+
+  .img22 {
+    position: absolute;
+    width: 100vw;
+    top: 10%
+  }
+
+  .img23 {
+    position: absolute;
+    width: 100vw;
+    top: 10%
+  }
+
+  .img24 {
+    position: absolute;
+    width: 100vw;
+    top: 10%
+  }
+
+  .img25 {
+    position: absolute;
+    width: 100vw;
+    top: 35%
+  }
+
+  .img26 {
+    position: absolute;
+    width: 100vw;
+    top: 60%
+  }
