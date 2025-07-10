@@ -1,16 +1,13 @@
-:root {
-    --vh: 1vh;
-  }
-  
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  
   .canvas {
     position: relative;
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100dvh;
     overflow: hidden;
     background-color: #bddeff;
   }
@@ -18,7 +15,7 @@
   .bg {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     object-fit: cover;
     top: 0;
     left: 0;
@@ -58,8 +55,8 @@
   }
   
   .slideUp {
-    top: calc(var(--vh, 1vh) * (-36)); /* 상단 10% 위치로 이동 */
-    transform: translate(-50%, 0); /* 수직 중심 이동 해제, 왼쪽으로만 중앙 정렬 */
+    top: -36dvh;
+    transform: translate(-50%, 0);
   }
   
   .container {
@@ -128,65 +125,45 @@
       transform: translateX(80px);
     }
   }
-
-
+  
   .dacapo {
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: calc(var(--vh, 1vh) * 3);
+    top: 3dvh;
   }
-
+  
   .start {
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: calc(var(--vh, 1vh) * 72);
+    top: 72dvh;
   }
   
-  .img1 {
-    position: absolute;
-    width: 100vw;
-    z-index: 2;
-    top: calc(var(--vh, 1vh) * 7);
-  }
-  
-  .img2 {
-    position: absolute;
-    width: 100vw;
-    top: calc(var(--vh, 1vh) * 10);
-  }
-  
-  /* img3 ~ img26 도 마찬가지로 세미콜론 꼭 붙여주세요 */
-  .img3 {
-    position: absolute;
-    width: 100vw;
-    top: calc(var(--vh, 1vh) * 10);
-  }
-  
-  /* 나머지 이미지들도 세미콜론 확인 및 위치 조정해 주세요 */
-  
-  .img4 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
-  .img5 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
-  .img6 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
-  .img7 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 14); }
-  .img8 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 12); }
-  .img9 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 13); }
-  .img10 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
-  .img11 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 15); }
-  .img12 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
-  .img13 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
-  .img14 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
-  .img15 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
-  .img16 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
-  .img17 { position: absolute; width: 100vw; height: 100vh; top: calc(var(--vh, 1vh) * (-4)); }
-  .img18 { position: absolute; width: 100vw; height: 100vh; top: calc(var(--vh, 1vh) * (-4)); }
-  .img19 { position: absolute; width: 100vw; top: 35%; }
-  .img20 { position: absolute; width: 100vw; top: 35%; }
-  .img21 { position: absolute; width: 100vw; top: 35%; }
-  .img22 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
-  .img23 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
-  .img24 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
-  .img25 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
-  .img26 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 60); }
+  .img1 { position: absolute; width: 100vw; z-index: 2; top: 7dvh; }
+  .img2 { position: absolute; width: 100vw; top: 10dvh; }
+  .img3 { position: absolute; width: 100vw; top: 10dvh; }
+  .img4 { position: absolute; width: 100vw; top: 10dvh; }
+  .img5 { position: absolute; width: 100vw; top: 10dvh; }
+  .img6 { position: absolute; width: 100vw; top: 10dvh; }
+  .img7 { position: absolute; width: 100vw; top: 14dvh; }
+  .img8 { position: absolute; width: 100vw; top: 12dvh; }
+  .img9 { position: absolute; width: 100vw; top: 13dvh; }
+  .img10 { position: absolute; width: 100vw; top: 16dvh; }
+  .img11 { position: absolute; width: 100vw; top: 15dvh; }
+  .img12 { position: absolute; width: 100vw; top: 16dvh; }
+  .img13 { position: absolute; width: 100vw; top: 16dvh; }
+  .img14 { position: absolute; width: 100vw; top: 16dvh; }
+  .img15 { position: absolute; width: 100vw; top: 16dvh; }
+  .img16 { position: absolute; width: 100vw; top: 16dvh; }
+  .img17 { position: absolute; width: 100vw; height: 100dvh; top: -4dvh; }
+  .img18 { position: absolute; width: 100vw; height: 100dvh; top: -4dvh; }
+  .img19 { position: absolute; width: 100vw; top: 35dvh; z-index: 20; }
+  .img20 { position: absolute; width: 100vw; top: 35dvh; z-index: 20; }
+  .img21 { position: absolute; width: 100vw; top: 35dvh; z-index: 20; }
+  .img22 { position: absolute; width: 100vw; top: 10dvh; }
+  .img23 { position: absolute; width: 100vw; top: 10dvh; }
+  .img24 { position: absolute; width: 100vw; top: 10dvh; }
+  .img25 { position: absolute; width: 100vw; top: 35dvh; }
+  .img26 { position: absolute; width: 100vw; top: 60dvh; }
   
