@@ -2,14 +2,8 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "rewrites": [
-      {
-        "source": "/manifest.json",
-        "destination": "/manifest.json"
-      },
-      {
-        "source": "/favicon.ico",
-        "destination": "/favicon.ico"
-      }
+      { "source": "/manifest.json", "destination": "/manifest.json" },
+      { "source": "/favicon.ico", "destination": "/favicon.ico" }
     ]
   }
   
