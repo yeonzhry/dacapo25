@@ -16,7 +16,7 @@
   .bg {
     position: absolute;
     width: 100vw;
-    height: 100dvh;
+    height: 100lvh;
     object-fit: cover;
     top: 0;
     left: 0;
@@ -56,7 +56,7 @@
   }
   
   .slideUp {
-    top: -36dvh;
+    top: -36lvh;
     transform: translate(-50%, 0);
   }
   
@@ -131,40 +131,40 @@
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: 3dvh;
+    top: 3lvh;
   }
   
   .start {
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: 72dvh;
+    top: 72lvh;
   }
   
-  .img1 { position: absolute; width: 100vw; z-index: 2; top: 7dvh; }
-  .img2 { position: absolute; width: 100vw; top: 10dvh; }
-  .img3 { position: absolute; width: 100vw; top: 10dvh; }
-  .img4 { position: absolute; width: 100vw; top: 10dvh; }
-  .img5 { position: absolute; width: 100vw; top: 10dvh; }
-  .img6 { position: absolute; width: 100vw; top: 10dvh; }
-  .img7 { position: absolute; width: 100vw; top: 14dvh; }
-  .img8 { position: absolute; width: 100vw; top: 12dvh; }
-  .img9 { position: absolute; width: 100vw; top: 13dvh; }
-  .img10 { position: absolute; width: 100vw; top: 16dvh; }
-  .img11 { position: absolute; width: 100vw; top: 15dvh; }
-  .img12 { position: absolute; width: 100vw; top: 16dvh; }
-  .img13 { position: absolute; width: 100vw; top: 16dvh; }
-  .img14 { position: absolute; width: 100vw; top: 16dvh; }
-  .img15 { position: absolute; width: 100vw; top: 16dvh; }
-  .img16 { position: absolute; width: 100vw; top: 16dvh; }
-  .img17 { position: absolute; width: 100vw; height: 100dvh; top: -4dvh; }
-  .img18 { position: absolute; width: 100vw; height: 100dvh; top: -4dvh; }
-  .img19 { position: absolute; width: 100vw; top: 35dvh; z-index: 20; }
-  .img20 { position: absolute; width: 100vw; top: 35dvh; z-index: 20; }
-  .img21 { position: absolute; width: 100vw; top: 35dvh; z-index: 20; }
-  .img22 { position: absolute; width: 100vw; top: 10dvh; }
-  .img23 { position: absolute; width: 100vw; top: 10dvh; }
-  .img24 { position: absolute; width: 100vw; top: 10dvh; }
-  .img25 { position: absolute; width: 100vw; top: 35dvh; }
-  .img26 { position: absolute; width: 100vw; top: 60dvh; }
+  .img1 { position: absolute; width: 100vw; z-index: 2; top: 7lvh; }
+  .img2 { position: absolute; width: 100vw; top: 10lvh; }
+  .img3 { position: absolute; width: 100vw; top: 10lvh; }
+  .img4 { position: absolute; width: 100vw; top: 10lvh; }
+  .img5 { position: absolute; width: 100vw; top: 10lvh; }
+  .img6 { position: absolute; width: 100vw; top: 10lvh; }
+  .img7 { position: absolute; width: 100vw; top: 14lvh; }
+  .img8 { position: absolute; width: 100vw; top: 12lvh; }
+  .img9 { position: absolute; width: 100vw; top: 13lvh; }
+  .img10 { position: absolute; width: 100vw; top: 16lvh; }
+  .img11 { position: absolute; width: 100vw; top: 15lvh; }
+  .img12 { position: absolute; width: 100vw; top: 16lvh; }
+  .img13 { position: absolute; width: 100vw; top: 16lvh; }
+  .img14 { position: absolute; width: 100vw; top: 16lvh; }
+  .img15 { position: absolute; width: 100vw; top: 16lvh; }
+  .img16 { position: absolute; width: 100vw; top: 16lvh; }
+  .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
+  .img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
+  .img19 { position: absolute; width: 100vw; top: 35lvh; z-index: 20; }
+  .img20 { position: absolute; width: 100vw; top: 35lvh; z-index: 20; }
+  .img21 { position: absolute; width: 100vw; top: 35lvh; z-index: 20; }
+  .img22 { position: absolute; width: 100vw; top: 10lvh; }
+  .img23 { position: absolute; width: 100vw; top: 10lvh; }
+  .img24 { position: absolute; width: 100vw; top: 10lvh; }
+  .img25 { position: absolute; width: 100vw; top: 35lvh; }
+  .img26 { position: absolute; width: 100vw; top: 60lvh; }
   
