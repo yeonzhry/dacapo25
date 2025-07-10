@@ -58,7 +58,7 @@
   }
   
   .slideUp {
-    top: -36%; /* 상단 10% 위치로 이동 */
+    top: calc(var(--vh, 1vh) * (-36)); /* 상단 10% 위치로 이동 */
     transform: translate(-50%, 0); /* 수직 중심 이동 해제, 왼쪽으로만 중앙 정렬 */
   }
   
@@ -181,9 +181,9 @@
   .img16 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
   .img17 { position: absolute; width: 100vw; height: 100vh; top: calc(var(--vh, 1vh) * (-4)); }
   .img18 { position: absolute; width: 100vw; height: 100vh; top: calc(var(--vh, 1vh) * (-4)); }
-  .img19 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
-  .img20 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
-  .img21 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
+  .img19 { position: absolute; width: 100vw; top: 35%; }
+  .img20 { position: absolute; width: 100vw; top: 35%; }
+  .img21 { position: absolute; width: 100vw; top: 35%; }
   .img22 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
   .img23 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
   .img24 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
