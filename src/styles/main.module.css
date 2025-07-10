@@ -131,14 +131,14 @@
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: 2.5lvh;
+    top: 2.9lvh;
   }
   
   .start {
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: 72lvh;
+    bottom: -35lvh;
   }
   
   .img1 { position: absolute; width: 100vw; z-index: 2; top: 7lvh; }
