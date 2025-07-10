@@ -1,14 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Onboard from './pages/onboard';
 import Main from './pages/main'; // 아래에서 만들 파일
+import Highway from './pages/highway';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Onboard />} />
-        <Route path="/main" element={<Main />} />
+        {/* <Route path="/" element={<Onboard />} /> */}
+        <Route path="/" element={<Main />} />
+        <Route path="/highway" element={<Highway />} />
       </Routes>
     </Router>
   );

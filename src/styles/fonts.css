@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'AllAges';
+    src: url('../../public/fonts/AllAges2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'CheapPotatoes';
+    src: url('../../public/fonts/CheapPotatoesBlack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
