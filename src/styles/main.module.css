@@ -159,12 +159,12 @@
   .img16 { position: absolute; width: 100vw; top: 16lvh; }
   .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
   .img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
-  .img19 { position: absolute; width: 100vw; top: 35lvh; z-index: 20; }
-  .img20 { position: absolute; width: 100vw; top: 35lvh; z-index: 20; }
-  .img21 { position: absolute; width: 100vw; top: 35lvh; z-index: 20; }
+  .img19 { position: absolute; width: 100vw; bottom: 0; }
+  .img20 { position: absolute; width: 100vw; bottom: 0; }
+  .img21 { position: absolute; width: 100vw; bottom: 0; }
   .img22 { position: absolute; width: 100vw; top: 10lvh; }
   .img23 { position: absolute; width: 100vw; top: 10lvh; }
   .img24 { position: absolute; width: 100vw; top: 10lvh; }
-  .img25 { position: absolute; width: 100vw; top: 35lvh; }
+  .img25 { position: absolute; width: 100vw; bottom: 0; }
   .img26 { position: absolute; width: 100vw; top: 60lvh; }
   
