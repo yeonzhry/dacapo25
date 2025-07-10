@@ -5,12 +5,22 @@ import styles from '../styles/main.module.css';
 
 const Main = () => {
   const navigate = useNavigate();
-  const [showOnboard] = useState(true);
+  const [showOnboardç] = useState(true);
   const fullText = 'Highway to';
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
   const [slideUp, setSlideUp] = useState(false);
   const [showStartButton, setShowStartButton] = useState(false);
+
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
 
   useEffect(() => {
     if (!showOnboard) return;
