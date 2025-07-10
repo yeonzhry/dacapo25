@@ -134,59 +134,59 @@
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: 3%;
+    top: calc(var(--vh, 1vh) * 3);
   }
 
   .start {
     position: absolute;
     width: 100vw;
     z-index: 10;
-    top: 72%;
+    top: calc(var(--vh, 1vh) * 72);
   }
   
   .img1 {
     position: absolute;
     width: 100vw;
     z-index: 2;
-    top: 7%;
+    top: calc(var(--vh, 1vh) * 7);
   }
   
   .img2 {
     position: absolute;
     width: 100vw;
-    top: 10%;
+    top: calc(var(--vh, 1vh) * 10);
   }
   
   /* img3 ~ img26 도 마찬가지로 세미콜론 꼭 붙여주세요 */
   .img3 {
     position: absolute;
     width: 100vw;
-    top: 10%;
+    top: calc(var(--vh, 1vh) * 10);
   }
   
   /* 나머지 이미지들도 세미콜론 확인 및 위치 조정해 주세요 */
   
-  .img4 { position: absolute; width: 100vw; top: 10%; }
-  .img5 { position: absolute; width: 100vw; top: 10%; }
-  .img6 { position: absolute; width: 100vw; top: 10%; }
-  .img7 { position: absolute; width: 100vw; top: 14%; }
-  .img8 { position: absolute; width: 100vw; top: 12%; }
-  .img9 { position: absolute; width: 100vw; top: 13%; }
-  .img10 { position: absolute; width: 100vw; top: 16%; }
-  .img11 { position: absolute; width: 100vw; top: 15%; }
-  .img12 { position: absolute; width: 100vw; top: 16%; }
-  .img13 { position: absolute; width: 100vw; top: 16%; }
-  .img14 { position: absolute; width: 100vw; top: 16%; }
-  .img15 { position: absolute; width: 100vw; top: 16%; }
-  .img16 { position: absolute; width: 100vw; top: 16%; }
-  .img17 { position: absolute; width: 100vw; height: 100vh; top: -4%; }
-  .img18 { position: absolute; width: 100vw; height: 100vh; top: -4%; }
-  .img19 { position: absolute; width: 100vw; top: 35%; }
-  .img20 { position: absolute; width: 100vw; top: 35%; }
-  .img21 { position: absolute; width: 100vw; top: 35%; }
-  .img22 { position: absolute; width: 100vw; top: 10%; }
-  .img23 { position: absolute; width: 100vw; top: 10%; }
-  .img24 { position: absolute; width: 100vw; top: 10%; }
-  .img25 { position: absolute; width: 100vw; top: 35%; }
-  .img26 { position: absolute; width: 100vw; top: 60%; }
+  .img4 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
+  .img5 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
+  .img6 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
+  .img7 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 14); }
+  .img8 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 12); }
+  .img9 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 13); }
+  .img10 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
+  .img11 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 15); }
+  .img12 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
+  .img13 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
+  .img14 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
+  .img15 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
+  .img16 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 16); }
+  .img17 { position: absolute; width: 100vw; height: 100vh; top: calc(var(--vh, 1vh) * (-4)); }
+  .img18 { position: absolute; width: 100vw; height: 100vh; top: calc(var(--vh, 1vh) * (-4)); }
+  .img19 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
+  .img20 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
+  .img21 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
+  .img22 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
+  .img23 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
+  .img24 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 10); }
+  .img25 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 35); }
+  .img26 { position: absolute; width: 100vw; top: calc(var(--vh, 1vh) * 60); }
   

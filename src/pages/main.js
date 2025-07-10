@@ -5,7 +5,7 @@ import styles from '../styles/main.module.css';
 
 const Main = () => {
   const navigate = useNavigate();
-  const [showOnboardç] = useState(true);
+  const [showOnboard] = useState(true);
   const fullText = 'Highway to';
   const [text, setText] = useState('');
   const [index, setIndex] = useState(0);
