@@ -7,7 +7,8 @@
   .canvas {
     position: relative;
     width: 100vw;
-    height: 100dvh;
+    height: calc(var(--vh, 1vh) * 100); /* fallback */
+    height: 100lvh; /* modern */
     overflow: hidden;
     background-color: #bddeff;
   }
