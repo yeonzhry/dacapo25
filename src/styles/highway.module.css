@@ -1,5 +1,5 @@
 .scrollContainer {
-  height: 400vh;
+  height: 330vh;
   position: relative;
   z-index: 1;
 }
@@ -54,7 +54,7 @@
   width: 100vw;
   height: 100lvh;
   top: -4lvh;
-  z-index: 10;
+  z-index: 5;
 }
 
 .car {
@@ -63,7 +63,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  z-index: 100;
+  z-index: 10;
 }
 
 .img1 { position: absolute; width: 100vw; z-index: 2; top: 7dvh; }
@@ -85,16 +85,16 @@
 /* .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img19 { position: absolute; width: 100vw; bottom: 0; } */
-.img20 { position: absolute; width: 100vw; bottom: 0; }
-.img21 { position: absolute; width: 100vw; bottom: 0; }
+.img20 { position: fixed; width: 100vw; bottom: 0; }
+.img21 { position: fixed; width: 100vw; bottom: 0; }
 .img22 { position: absolute; width: 100vw; top: 10lvh; }
 .img23 { position: absolute; width: 100vw; top: 10lvh; }
 .img24 { position: absolute; width: 100vw; top: 10lvh; }
-.img25 { position: absolute; width: 100vw; z-index: 100; bottom: 0; }
-.img26 { position: absolute; width: 100vw; z-index: 100; bottom: 18lvh; }
+.img25 { position: fixed; width: 100vw; z-index: 100; bottom: 0; }
+.img26 { position: absolute; width: 100vw; z-index: 1; bottom: 18lvh; }
 
 .sign {
-  position: fixed;
+  position: absolute;
   top: 40lvh;
   left: 50%;
   transition: all 0.1s ease-out;
@@ -115,7 +115,7 @@
     z-index: 150;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 20dvh;
+    bottom: 20lvh;
 }
 
 @keyframes bounce {

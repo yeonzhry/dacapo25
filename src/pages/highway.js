@@ -43,16 +43,16 @@ const Highway = () => {
   };
   
   const signs = [
-    { id: 1, side: 'left', initialY: 20, xOffset: -120, image: '/images/sign1.webp' },
-    { id: 2, side: 'right', initialY: 40, xOffset: 170, image: '/images/sign2.webp' },
-    { id: 3, side: 'left', initialY: -80, xOffset: -50, image: '/images/sign3.webp' },
-    { id: 4, side: 'right', initialY: -120, xOffset: 10, image: '/images/sign4.webp' },
-    { id: 5, side: 'left', initialY: -180, xOffset: 100, image: '/images/sign5.webp' },
-    { id: 6, side: 'right', initialY: -220, xOffset: -170, image: '/images/sign6.webp' },
+    { id: 1, side: 'left', initialY: 20, xOffset: -130, image: '/images/sign1.webp' },
+    { id: 2, side: 'right', initialY: 40, xOffset: 180, image: '/images/sign2.webp' },
+    { id: 3, side: 'left', initialY: -80, xOffset: -60, image: '/images/sign3.webp' },
+    { id: 4, side: 'right', initialY: -120, xOffset: 20, image: '/images/sign4.webp' },
+    { id: 5, side: 'left', initialY: -180, xOffset: 80, image: '/images/sign5.webp' },
+    { id: 6, side: 'right', initialY: -220, xOffset: -160, image: '/images/sign6.webp' },
     { id: 7, side: 'left', initialY: -260, xOffset: 250, image: '/images/sign7.webp' },
     { id: 8, side: 'right', initialY: -300, xOffset: -230, image: '/images/sign8.webp' },
-    { id: 9, side: 'left', initialY: -340, xOffset: 410, image: '/images/sign9.webp' },
-    { id: 10, side: 'right', initialY: -380, xOffset: -320, image: '/images/sign10.webp' }
+    { id: 9, side: 'left', initialY: -340, xOffset: 400, image: '/images/sign9.webp' },
+    { id: 10, side: 'right', initialY: -400, xOffset: -340, image: '/images/sign10.webp' }
 
   ];
 
