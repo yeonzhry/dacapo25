@@ -11,7 +11,7 @@
   width: 100%;
   /* height: calc(var(--vh, 1vh) * 100); fallback */
   height: 100lvh; /* modern */
-  overflow: visible;
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -85,13 +85,13 @@
 /* .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img19 { position: absolute; width: 100vw; bottom: 0; } */
-.img20 { position: fixed; width: 100vw; bottom: 0; }
-.img21 { position: fixed; width: 100vw; bottom: 0; }
+.img20 { position: fixed; width: 100vw; z-index: 10; bottom: 0; }
+.img21 { position: fixed; width: 100vw; z-index: 10; bottom: 0; }
 .img22 { position: absolute; width: 100vw; top: 10lvh; }
 .img23 { position: absolute; width: 100vw; top: 10lvh; }
 .img24 { position: absolute; width: 100vw; top: 10lvh; }
-.img25 { position: fixed; width: 100vw; z-index: 100; bottom: 0; }
-.img26 { position: absolute; width: 100vw; z-index: 1; bottom: 18lvh; }
+.img25 { position: fixed; width: 100vw; z-index: 10; bottom: 0; }
+.img26 { position: fixed; width: 100vw; z-index: 10; bottom: 18lvh; }
 
 .sign {
   position: absolute;
@@ -99,12 +99,15 @@
   left: 50%;
   transition: all 0.1s ease-out;
   z-index: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .signBoard {
-  width: 70%;
+  width: 50%;
   height: auto;
   transform: translateX(-50%);
+  pointer-events: auto;
   /* position: relative; */
   /* z-index: 1; */
 }
@@ -116,6 +119,87 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 20lvh;
+}
+
+
+
+/* 팝업 오버레이 */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(5px);
+}
+
+/* 팝업 내용 */
+.popupContent {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+/* 팝업 애니메이션 */
+@keyframes popupSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 닫기 버튼 */
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* 팝업 이미지 컨테이너 */
+.popupImages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* 팝업 이미지 */
+.popupImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes bounce {

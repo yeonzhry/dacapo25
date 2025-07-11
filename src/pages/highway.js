@@ -5,6 +5,8 @@ import styles from '../styles/highway.module.css';
 const Highway = () => {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
+  const [selectedSign, setSelectedSign] = useState(null);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   
   useEffect(() => {
@@ -33,28 +35,48 @@ const Highway = () => {
       : xOffset + progress * xMoveAmount; // 오른쪽은 x 양수 방향 (오른쪽으로)
   
     const scale = Math.max(0.3, Math.min(2, 1 + progress * 1.5));
-    const opacity = yMove > -100 ? Math.max(0, Math.min(1, 1 - yMove / 600)) : 0;
+    const opacity = yMove > -31 ? Math.max(0, Math.min(1, 1 - yMove / 600)) : 0;
   
     return {
       transform: `translateX(${xMove}px) translateY(${yMove}px) scale(${scale})`,
       opacity,
       zIndex: Math.floor(-yMove + 100),
+      pointerEvents: opacity === 0 ? 'none' : 'auto',
     };
   };
+
+  
   
   const signs = [
-    { id: 1, side: 'left', initialY: 20, xOffset: -130, image: '/images/sign1.webp' },
-    { id: 2, side: 'right', initialY: 40, xOffset: 180, image: '/images/sign2.webp' },
-    { id: 3, side: 'left', initialY: -80, xOffset: -60, image: '/images/sign3.webp' },
-    { id: 4, side: 'right', initialY: -120, xOffset: 20, image: '/images/sign4.webp' },
-    { id: 5, side: 'left', initialY: -180, xOffset: 80, image: '/images/sign5.webp' },
-    { id: 6, side: 'right', initialY: -220, xOffset: -160, image: '/images/sign6.webp' },
-    { id: 7, side: 'left', initialY: -260, xOffset: 250, image: '/images/sign7.webp' },
-    { id: 8, side: 'right', initialY: -300, xOffset: -230, image: '/images/sign8.webp' },
-    { id: 9, side: 'left', initialY: -340, xOffset: 400, image: '/images/sign9.webp' },
-    { id: 10, side: 'right', initialY: -400, xOffset: -340, image: '/images/sign10.webp' }
+    { id: 1, side: 'left', initialY: 70, xOffset: -130, image: '/images/sign1.webp', popupImages: ['/images/main3_1.png', '/images/main3_2.png', '/images/main3_3.png']},
+    { id: 2, side: 'right', initialY: 30, xOffset: 100, image: '/images/sign2.webp', popupImages: ['/images/main4_1.png', '/images/main4_2.png', '/images/main4_3.png']},
+    { id: 3, side: 'left', initialY: -30, xOffset: -40, image: '/images/sign3.webp', popupImages: ['/images/main1_1.png', '/images/main1_2.png', '/images/main3_3.png'] },
+    { id: 4, side: 'right', initialY: -80, xOffset: -10, image: '/images/sign4.webp', popupImages: ['/images/main2_1.png', '/images/main2_2.png', '/images/main2_3.png'] },
+    { id: 5, side: 'left', initialY: -100, xOffset: 60, image: '/images/sign5.webp' },
+    { id: 6, side: 'right', initialY: -130, xOffset: -120, image: '/images/sign6.webp' },
+    { id: 7, side: 'left', initialY: -180, xOffset: 200, image: '/images/sign7.webp' },
+    { id: 8, side: 'right', initialY: -240, xOffset: -230, image: '/images/sign8.webp' },
+    { id: 9, side: 'left', initialY: -280, xOffset: 400, image: '/images/sign9.webp' },
+    { id: 10, side: 'right', initialY: -340, xOffset: -340, image: '/images/sign10.webp' }
 
   ];
+
+  const handleSignClick = (sign) => {
+    setSelectedSign(sign);
+    setPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setPopupVisible(false);
+    setSelectedSign(null);
+  };
+
+  // 팝업 외부 클릭 시 닫기
+  const handlePopupBackgroundClick = (e) => {
+    if (e.target === e.currentTarget) {
+      closePopup();
+    }
+  };
 
   return (
     <div className={styles.scrollContainer}>
@@ -87,24 +109,50 @@ const Highway = () => {
           <img src="/images/img24.webp" alt="img24" className={styles.img24} />
           <img src="/images/img25.webp" alt="img25" className={styles.img25} />
           <img src="/images/img26.webp" alt="img26" className={styles.img26} />
-
-        {signs.map((sign) => (
+          {signs.map((sign) => (
           <div
             key={sign.id}
             className={styles.sign}
             style={getSignStyle(sign.initialY, sign.side, sign.xOffset)}
+            onClick={() => handleSignClick(sign)}
           >
             <img src={sign.image} alt={`Sign ${sign.id}`} className={styles.signBoard} />
+            <div className={styles.clickArea}></div>
           </div>
         ))}
+
+
+
         <img src='/images/img17.webp' alt="road" className={styles.road} />
         <img src='/images/img18.webp' alt="road" className={styles.road} />
         <img src = '/images/filter.webp' alt="filter" className={styles.bgFilter} />
         <img src='/images/setlist.png' alt="road" className={styles.setlist} onClick={() => navigate('/setlist')} />
 
       </div>
+      {popupVisible && selectedSign && (
+        <div className={styles.popupOverlay} onClick={handlePopupBackgroundClick}>
+          <div className={styles.popupContent}>
+            <button className={styles.closeButton} onClick={closePopup}>
+              ×
+            </button>
+            <div className={styles.popupImages}>
+              {selectedSign.popupImages.map((image, index) => (
+                <img 
+                  key={index} 
+                  src={image} 
+                  alt={`Popup ${selectedSign.id}-${index + 1}`} 
+                  className={styles.popupImage}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
 
 export default Highway;
+
+
