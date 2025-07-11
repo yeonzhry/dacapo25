@@ -36,7 +36,7 @@
 }
 
 .road {
-  top: -4%;
+  top: calc(var(--fixed-vh)* (-4));
   z-index: 10;
 }
 
