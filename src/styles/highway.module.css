@@ -28,7 +28,7 @@
 .bg {
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 100lvh;
   object-fit: cover;
   top: 0;
   left: 0;
@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100lvh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,8 +52,8 @@
 .road {
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  top: -4dvh;
+  height: 100lvh;
+  top: -4lvh;
   z-index: 10;
 }
 
@@ -67,31 +67,31 @@
 }
 
 .img1 { position: absolute; width: 100vw; z-index: 2; top: 7dvh; }
-.img2 { position: absolute; width: 100vw; top: 12dvh; }
-.img3 { position: absolute; width: 100vw; top: 10dvh; }
-.img4 { position: absolute; width: 100vw; top: 10dvh; }
-.img5 { position: absolute; width: 100vw; top: 16dvh; }
-.img6 { position: absolute; width: 100vw; top: 10dvh; }
-.img7 { position: absolute; width: 100vw; top: 14dvh; }
-.img8 { position: absolute; width: 100vw; top: 12dvh; }
-.img9 { position: absolute; width: 100vw; top: 13dvh; }
-.img10 { position: absolute; width: 100vw; top: 16dvh; }
-.img11 { position: absolute; width: 100vw; top: 15dvh; }
-.img12 { position: absolute; width: 100vw; top: 16dvh; }
-.img13 { position: absolute; width: 100vw; top: 16dvh; }
-.img14 { position: absolute; width: 100vw; top: 16dvh; }
-.img15 { position: absolute; width: 100vw; top: 16dvh; }
-.img16 { position: absolute; width: 100vw; top: 16dvh; }
+.img2 { position: absolute; width: 100vw; top: 12lvh; }
+.img3 { position: absolute; width: 100vw; top: 10lvh; }
+.img4 { position: absolute; width: 100vw; top: 10lvh; }
+.img5 { position: absolute; width: 100vw; top: 16lvh; }
+.img6 { position: absolute; width: 100vw; top: 10lvh; }
+.img7 { position: absolute; width: 100vw; top: 14lvh; }
+.img8 { position: absolute; width: 100vw; top: 12lvh; }
+.img9 { position: absolute; width: 100vw; top: 13lvh; }
+.img10 { position: absolute; width: 100vw; top: 16lvh; }
+.img11 { position: absolute; width: 100vw; top: 15lvh; }
+.img12 { position: absolute; width: 100vw; top: 16lvh; }
+.img13 { position: absolute; width: 100vw; top: 16lvh; }
+.img14 { position: absolute; width: 100vw; top: 16lvh; }
+.img15 { position: absolute; width: 100vw; top: 16lvh; }
+.img16 { position: absolute; width: 100vw; top: 16lvh; }
 /* .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img19 { position: absolute; width: 100vw; bottom: 0; } */
 .img20 { position: absolute; width: 100vw; bottom: 0; }
 .img21 { position: absolute; width: 100vw; bottom: 0; }
-.img22 { position: absolute; width: 100vw; top: 10dvh; }
-.img23 { position: absolute; width: 100vw; top: 10dvh; }
-.img24 { position: absolute; width: 100vw; top: 10dvh; }
+.img22 { position: absolute; width: 100vw; top: 10lvh; }
+.img23 { position: absolute; width: 100vw; top: 10lvh; }
+.img24 { position: absolute; width: 100vw; top: 10lvh; }
 .img25 { position: absolute; width: 100vw; z-index: 100; bottom: 0; }
-.img26 { position: absolute; width: 100vw; z-index: 100; bottom: 18dvh; }
+.img26 { position: absolute; width: 100vw; z-index: 100; bottom: 18lvh; }
 
 .sign {
   position: absolute;
