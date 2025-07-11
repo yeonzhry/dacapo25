@@ -141,6 +141,7 @@
     bottom: -35lvh;
   }
   
+  
   .img1 { position: absolute; width: 100vw; z-index: 2; top: 7lvh; }
   .img2 { position: absolute; width: 100vw; top: 10lvh; }
   .img3 { position: absolute; width: 100vw; top: 10lvh; }
@@ -167,4 +168,5 @@
   .img24 { position: absolute; width: 100vw; top: 10lvh; }
   .img25 { position: absolute; width: 100vw; bottom: 0; }
   .img26 { position: absolute; width: 100vw; bottom: 18lvh; }
+  
   
