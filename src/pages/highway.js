@@ -6,6 +6,14 @@ const Highway = () => {
   const navigate = useNavigate();
   const [scrollY, setScrollY] = useState(0);
 
+  
+  useEffect(() => {
+    const initialHeight = window.innerHeight;
+    const vh = initialHeight * 0.01;
+    document.documentElement.style.setProperty('--fixed-vh', `${vh}px`);
+  }, []);
+  
+
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
