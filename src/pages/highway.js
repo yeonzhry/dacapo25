@@ -5,112 +5,50 @@ import styles from '../styles/highway.module.css';
 const Highway = () => {
   const navigate = useNavigate();
   const scrollYRef = useRef(0);
-  const targetScrollYRef = useRef(0);
+  const lastUpdateRef = useRef(0);
   const rafRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [selectedSign, setSelectedSign] = useState(null);
   const [popupVisible, setPopupVisible] = useState(false);
-  const isScrollingRef = useRef(false);
 
   useEffect(() => {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--fixed-vh', `${vh}px`);
   }, []);
 
-  // 부드러운 스크롤 애니메이션
-  const smoothScrollAnimation = useCallback(() => {
-    const ease = 0.08; // 스크롤 속도 (0.01 ~ 0.2 사이, 낮을수록 더 부드럽게)
-    const diff = targetScrollYRef.current - scrollYRef.current;
-    
-    if (Math.abs(diff) < 0.1) {
-      scrollYRef.current = targetScrollYRef.current;
-      isScrollingRef.current = false;
-      return;
-    }
-    
-    scrollYRef.current += diff * ease;
-    const newProgress = Math.min(scrollYRef.current / 5000, 1);
-    setProgress(newProgress);
-    
-    rafRef.current = requestAnimationFrame(smoothScrollAnimation);
-  }, []);
-
-  // 스크롤 이벤트 처리
+  // 스크롤 이벤트 최적화 - 쓰로틀링 적용
   useEffect(() => {
-    const handleScroll = (e) => {
-      e.preventDefault(); // 기본 스크롤 동작 방지
-      
-      targetScrollYRef.current = window.scrollY;
-      
-      if (!isScrollingRef.current) {
-        isScrollingRef.current = true;
-        smoothScrollAnimation();
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        rafRef.current = requestAnimationFrame(() => {
+          const now = Date.now();
+          // 16ms마다 업데이트 (60fps)
+          if (now - lastUpdateRef.current >= 16) {
+            scrollYRef.current = window.scrollY;
+            const newProgress = Math.min(scrollYRef.current / 5000, 1);
+            setProgress(newProgress);
+            lastUpdateRef.current = now;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    const handleWheel = (e) => {
-      e.preventDefault();
-      
-      // 휠 스크롤 속도 조절
-      const wheelSpeed = 0.5; // 휠 스크롤 속도 (0.1 ~ 2.0 사이)
-      targetScrollYRef.current += e.deltaY * wheelSpeed;
-      targetScrollYRef.current = Math.max(0, Math.min(targetScrollYRef.current, document.body.scrollHeight - window.innerHeight));
-      
-      if (!isScrollingRef.current) {
-        isScrollingRef.current = true;
-        smoothScrollAnimation();
-      }
-    };
-
-    const handleTouch = (() => {
-      let startY = 0;
-      let startTime = 0;
-      
-      const handleTouchStart = (e) => {
-        startY = e.touches[0].clientY;
-        startTime = Date.now();
-      };
-      
-      const handleTouchMove = (e) => {
-        e.preventDefault();
-        
-        const currentY = e.touches[0].clientY;
-        const deltaY = startY - currentY;
-        const touchSpeed = 0.8; // 터치 스크롤 속도
-        
-        targetScrollYRef.current += deltaY * touchSpeed;
-        targetScrollYRef.current = Math.max(0, Math.min(targetScrollYRef.current, document.body.scrollHeight - window.innerHeight));
-        
-        startY = currentY;
-        
-        if (!isScrollingRef.current) {
-          isScrollingRef.current = true;
-          smoothScrollAnimation();
-        }
-      };
-      
-      return { handleTouchStart, handleTouchMove };
-    })();
-
-    // 이벤트 리스너 등록
-    window.addEventListener('scroll', handleScroll, { passive: false });
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('touchstart', handleTouch.handleTouchStart, { passive: false });
-    window.addEventListener('touchmove', handleTouch.handleTouchMove, { passive: false });
-
+    // passive 이벤트 리스너 사용
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouch.handleTouchStart);
-      window.removeEventListener('touchmove', handleTouch.handleTouchMove);
-      
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [smoothScrollAnimation]);
+  }, []);
 
-  // 스타일 계산 최적화
+  // 스타일 계산 최적화 - 메모이제이션
   const getSignStyle = useCallback((initialY, side, xOffset, currentProgress) => {
     const xMoveAmount = 1200;
     const yMoveAmount = 800;
@@ -128,7 +66,7 @@ const Highway = () => {
       opacity,
       zIndex: Math.floor(-yMove + 100),
       pointerEvents: opacity === 0 ? 'none' : 'auto',
-      willChange: 'transform, opacity',
+      willChange: 'transform, opacity', // GPU 가속 활성화
     };
   }, []);
 
@@ -137,6 +75,7 @@ const Highway = () => {
     []
   );
 
+  // signs 배열 메모이제이션
   const signs = useMemo(() => [
     { id: 1, side: 'left', initialY: 70, xOffset: -130, image: '/images/sign1.webp', popupImages: ['/images/main3_1.png', '/images/main3_2.png', '/images/main3_3.png'] },
     { id: 2, side: 'right', initialY: 30, xOffset: 100, image: '/images/sign2.webp', popupImages: ['/images/main4_1.png', '/images/main4_2.png', '/images/main4_3.png'] },
@@ -150,6 +89,7 @@ const Highway = () => {
     { id: 10, side: 'right', initialY: -340, xOffset: -340, image: '/images/sign10.webp' }
   ], []);
 
+  // 보이는 사인들만 필터링 - 메모이제이션
   const visibleSigns = useMemo(() => {
     return signs.filter(sign => {
       const yMove = sign.initialY + progress * 800;
@@ -173,6 +113,7 @@ const Highway = () => {
     }
   }, [closePopup]);
 
+  // 네비게이션 핸들러 최적화
   const handleSetlistClick = useCallback(() => {
     navigate('/setlist');
   }, [navigate]);
