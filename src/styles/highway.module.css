@@ -95,7 +95,7 @@
 
 .sign {
   position: absolute;
-  top: 40%;
+  top: 40lvh;
   left: 50%;
   transition: all 0.1s ease-out;
   z-index: 1;
