@@ -9,24 +9,38 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: calc(var(--fixed-vh) * 100);
+  /* height: calc(var(--vh, 1vh) * 100); fallback */
+  height: 100dvh; /* modern */
   overflow: visible;
   z-index: 1;
 }
 
-.bg,
-.bgFilter,
-.road {
+/* .roadContainer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 100%;
+} */
+
+
+.bg {
   position: absolute;
   width: 100vw;
-  height: calc(var(--fixed-vh) * 100);
+  height: 100vh;
+  object-fit: cover;
   top: 0;
   left: 0;
-  object-fit: cover;
   z-index: 0;
 }
 
 .bgFilter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,7 +50,10 @@
 }
 
 .road {
-  top: calc(var(--fixed-vh)* (-4));
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: -4dvh;
   z-index: 10;
 }
 
@@ -49,40 +66,32 @@
   z-index: 100;
 }
 
-/* 이미지들 top 위치 모두 fixed-vh 기준으로 */
-.img1 { top: calc(var(--fixed-vh) * 7); }
-.img2 { top: calc(var(--fixed-vh) * 12); }
-.img3 { top: calc(var(--fixed-vh) * 10); }
-.img4 { top: calc(var(--fixed-vh) * 10); }
-.img5 { top: calc(var(--fixed-vh) * 16); }
-.img6 { top: calc(var(--fixed-vh) * 10); }
-.img7 { top: calc(var(--fixed-vh) * 14); }
-.img8 { top: calc(var(--fixed-vh) * 12); }
-.img9 { top: calc(var(--fixed-vh) * 13); }
-.img10 { top: calc(var(--fixed-vh) * 16); }
-.img11 { top: calc(var(--fixed-vh) * 15); }
-.img12 { top: calc(var(--fixed-vh) * 16); }
-.img13 { top: calc(var(--fixed-vh) * 16); }
-.img14 { top: calc(var(--fixed-vh) * 16); }
-.img15 { top: calc(var(--fixed-vh) * 16); }
-.img16 { top: calc(var(--fixed-vh) * 16); }
-
-.img20 { bottom: 0; }
-.img21 { bottom: 0; }
-.img22 { top: calc(var(--fixed-vh) * 10); }
-.img23 { top: calc(var(--fixed-vh) * 10); }
-.img24 { top: calc(var(--fixed-vh) * 10); }
-.img25 { bottom: 0; z-index: 100; }
-.img26 { bottom: calc(var(--fixed-vh) * 18); z-index: 100; }
-
-.img1, .img2, .img3, .img4, .img5, .img6, .img7,
-.img8, .img9, .img10, .img11, .img12, .img13,
-.img14, .img15, .img16, .img20, .img21, .img22,
-.img23, .img24, .img25, .img26 {
-  position: absolute;
-  width: 100vw;
-  z-index: 2;
-}
+.img1 { position: absolute; width: 100vw; z-index: 2; top: 7dvh; }
+.img2 { position: absolute; width: 100vw; top: 12dvh; }
+.img3 { position: absolute; width: 100vw; top: 10dvh; }
+.img4 { position: absolute; width: 100vw; top: 10dvh; }
+.img5 { position: absolute; width: 100vw; top: 16dvh; }
+.img6 { position: absolute; width: 100vw; top: 10dvh; }
+.img7 { position: absolute; width: 100vw; top: 14dvh; }
+.img8 { position: absolute; width: 100vw; top: 12dvh; }
+.img9 { position: absolute; width: 100vw; top: 13dvh; }
+.img10 { position: absolute; width: 100vw; top: 16dvh; }
+.img11 { position: absolute; width: 100vw; top: 15dvh; }
+.img12 { position: absolute; width: 100vw; top: 16dvh; }
+.img13 { position: absolute; width: 100vw; top: 16dvh; }
+.img14 { position: absolute; width: 100vw; top: 16dvh; }
+.img15 { position: absolute; width: 100vw; top: 16dvh; }
+.img16 { position: absolute; width: 100vw; top: 16dvh; }
+/* .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
+.img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
+.img19 { position: absolute; width: 100vw; bottom: 0; } */
+.img20 { position: absolute; width: 100vw; bottom: 0; }
+.img21 { position: absolute; width: 100vw; bottom: 0; }
+.img22 { position: absolute; width: 100vw; top: 10dvh; }
+.img23 { position: absolute; width: 100vw; top: 10dvh; }
+.img24 { position: absolute; width: 100vw; top: 10dvh; }
+.img25 { position: absolute; width: 100vw; z-index: 100; bottom: 0; }
+.img26 { position: absolute; width: 100vw; z-index: 100; bottom: 18dvh; }
 
 .sign {
   position: absolute;
@@ -96,15 +105,17 @@
   width: 70%;
   height: auto;
   transform: translateX(-50%);
+  /* position: relative; */
+  /* z-index: 1; */
 }
 
 .setlist {
   position: absolute;
-  width: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: calc(var(--fixed-vh) * 20);
-  z-index: 150;
+    width: 60%;
+    z-index: 150;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20dvh;
 }
 
 @keyframes bounce {
@@ -115,3 +126,4 @@
     transform: translateX(-50%) translateY(-10px);
   }
 }
+
