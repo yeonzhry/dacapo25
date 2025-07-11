@@ -141,10 +141,10 @@
 /* 팝업 내용 */
 .popupContent {
   position: relative;
-  background: white;
-  border-radius: 15px;
+  /* background: white;
+  border-radius: 15px; */
   max-width: 90vw;
-  max-height: 90vh;
+  max-height: 60vh;
   overflow-y: auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   animation: popupSlideIn 0.3s ease-out;
@@ -165,15 +165,15 @@
 /* 닫기 버튼 */
 .closeButton {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: rgba(0, 0, 0, 0.7);
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0);
   color: white;
   border: none;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
   cursor: pointer;
   z-index: 10001;
   display: flex;

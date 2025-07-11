@@ -17,11 +17,21 @@ const Highway = () => {
   
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener('scroll', handleScroll);
     setScrollY(window.scrollY);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+  
 
   const progress = Math.min(scrollY / 5000, 1);
 
@@ -50,7 +60,7 @@ const Highway = () => {
   const signs = [
     { id: 1, side: 'left', initialY: 70, xOffset: -130, image: '/images/sign1.webp', popupImages: ['/images/main3_1.png', '/images/main3_2.png', '/images/main3_3.png']},
     { id: 2, side: 'right', initialY: 30, xOffset: 100, image: '/images/sign2.webp', popupImages: ['/images/main4_1.png', '/images/main4_2.png', '/images/main4_3.png']},
-    { id: 3, side: 'left', initialY: -30, xOffset: -40, image: '/images/sign3.webp', popupImages: ['/images/main1_1.png', '/images/main1_2.png', '/images/main3_3.png'] },
+    { id: 3, side: 'left', initialY: -30, xOffset: -40, image: '/images/sign3.webp', popupImages: ['/images/main1_1.png', '/images/main1_2.png', '/images/main1_3.png'] },
     { id: 4, side: 'right', initialY: -80, xOffset: -10, image: '/images/sign4.webp', popupImages: ['/images/main2_1.png', '/images/main2_2.png', '/images/main2_3.png'] },
     { id: 5, side: 'left', initialY: -100, xOffset: 60, image: '/images/sign5.webp' },
     { id: 6, side: 'right', initialY: -130, xOffset: -120, image: '/images/sign6.webp' },
@@ -109,17 +119,25 @@ const Highway = () => {
           <img src="/images/img24.webp" alt="img24" className={styles.img24} />
           <img src="/images/img25.webp" alt="img25" className={styles.img25} />
           <img src="/images/img26.webp" alt="img26" className={styles.img26} />
-          {signs.map((sign) => (
-          <div
-            key={sign.id}
-            className={styles.sign}
-            style={getSignStyle(sign.initialY, sign.side, sign.xOffset)}
-            onClick={() => handleSignClick(sign)}
-          >
-            <img src={sign.image} alt={`Sign ${sign.id}`} className={styles.signBoard} />
-            <div className={styles.clickArea}></div>
-          </div>
-        ))}
+{signs.map((sign) => {
+  const yMove = sign.initialY + progress * 800;
+
+  // 화면에 보이는 범위 안에 있는 표지판만 렌더링 (약간의 버퍼 포함)
+  if (yMove > window.innerHeight + 300 || yMove < -300) return null;
+
+  return (
+    <div
+      key={sign.id}
+      className={styles.sign}
+      style={getSignStyle(sign.initialY, sign.side, sign.xOffset)}
+      onClick={() => handleSignClick(sign)}
+    >
+      <img src={sign.image} alt={`Sign ${sign.id}`} className={styles.signBoard} />
+      <div className={styles.clickArea}></div>
+    </div>
+  );
+})}
+
 
 
 
