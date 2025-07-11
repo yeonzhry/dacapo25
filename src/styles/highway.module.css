@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   /* height: calc(var(--vh, 1vh) * 100); fallback */
-  height: 100dvh; /* modern */
+  height: 100lvh; /* modern */
   overflow: visible;
   z-index: 1;
 }
@@ -94,7 +94,7 @@
 .img26 { position: absolute; width: 100vw; z-index: 100; bottom: 18lvh; }
 
 .sign {
-  position: absolute;
+  position: fixed;
   top: 40lvh;
   left: 50%;
   transition: all 0.1s ease-out;
