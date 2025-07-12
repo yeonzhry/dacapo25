@@ -21,8 +21,8 @@
 }
 
 @font-face {
-  font-family: 'ClimateCrisisKR-2030';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/ClimateCrisisKR-1979.woff2') format('woff2');
+  font-family: 'BMKkubulim';
+  src: url('../../public/fonts/BMKkubulim.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }

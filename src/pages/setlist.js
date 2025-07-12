@@ -1,16 +1,111 @@
 import React from 'react';
-import styles from '../styles/setlist.module.css'; // 따로 스타일링할 경우
+import styles from '../styles/setlist.module.css';
 
 const SetlistPage = () => {
   return (
     <div className={styles.container}>
-      <img src="/images/main3.webp" alt="main3" className={styles.main3} />
-      <ul className={styles.songList}>
-        <li>(v)예지 (g)이은서 천범 (b)규정 (k)최은서 (d)택진</li>
-        <li>푸른산호초</li>
-        <li>혜성 - 윤하</li>
-        <li>Pretender - 오피셜히게단디즘</li>
-      </ul>
+      <img src="/images/bg3.webp" alt="bg" className={styles.bg} />
+      {/* <img src="/images/1.webp" alt="bg" className={styles.img1} /> */}
+
+
+      <div className={styles.content}>
+        <h1 className={styles.title}>SETLIST</h1>
+        <section className={styles.section}>
+          <h2 className={styles.partTitle}>1부</h2>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)예지 (g)희제 윤환 (b)윤석 (k)윤서 (d)현종</p>
+            <ul className={styles.songList}>
+              <li>푸른 산호초 - Seioko Matsuda</li>
+              <li>혜성 - 윤하</li>
+              <li>Pretender - Official Hige Dandism</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)정운 (g)이은서 천범 (b)규정 (k)최은서 (d)택진</p>
+            <ul className={styles.songList}>
+              <li>Marigold - Aimyon</li>
+              <li>비틀비틀 짝짜꿍 - 한로로</li>
+              <li>오르트구름 - 윤하</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)민주 (g)건호 기완 (b)연재 (k)수영 (d)현지</p>
+            <ul className={styles.songList}>
+              <li>Champagne Supernova - 백예린(Cover)</li>
+              <li>Kaiju no hanauta - Vaundy</li>
+              <li>나에게로 떠나는여행 - 버즈</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)민주 (g)승주 기완 (b)정연 (k)현진 (d)민경</p>
+            <ul className={styles.songList}>
+              <li>입춘 - 한로로</li>
+              <li>Drowning - 우즈</li>
+              <li>비밀번호 486 - 윤하</li>
+            </ul>
+          </div>
+
+          
+        </section>
+
+        {/* 2부 */}
+        <section className={styles.section}>
+          <h2 className={styles.partTitle}>2부</h2>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)건호 이은서 (g)건호 윤환 (b)연재 (k)윤서 (d)현종</p>
+            <ul className={styles.songList}>
+              <li>무희- Vaundy</li>
+              <li>사랑을전하고 싶다든가 - Aimyon </li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)승주 건호 (g)승주 건호 (b)규정 (k)윤서 (d)현종</p>
+            <ul className={styles.songList}>
+              <li>Beggin’ - Maneskin</li>
+              <li>Just - Radiohead</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)연재 (g)건호 승주 (b)정연 (k)수영 (d)민경</p>
+            <ul className={styles.songList}>
+              <li>Tell me if you wanna go home - Keira Knight</li>
+              <li>Antifreeze - 검정치마</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)예지 (g)기완 천범 (b)규정 (k)최은서 (d)택진</p>
+            <ul className={styles.songList}>
+              <li>너에게 닿기를 - 10cm</li>
+              <li>Silhoutte - KANA BOON</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)정운 (g)승주 희제 (b)정연 (k)수영 (d)현지</p>
+            <ul className={styles.songList}>
+              <li>Death by rock and roll - The pretty reckless</li>
+              <li>River - Bishop briggs</li>
+              <li>Last Day - 터치드</li>
+            </ul>
+          </div>
+
+          <div className={styles.team}>
+            <p className={styles.members}>(v)민주 (g)희제 (b)연재 (k)수영 (d)현지</p>
+            <ul className={styles.songList}>
+              <li>Love is dangerous - 터치드</li>
+              <li>고속도로 로맨스 - 유다빈밴드</li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
