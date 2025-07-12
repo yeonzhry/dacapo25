@@ -49,16 +49,16 @@ const Highway = () => {
   }, []);
 
   const signs = useMemo(() => [
-    { id: 1, side: 'left', initialY: 70, xOffset: -140, image: '/images/sign1.webp', popupImages: ['/images/main3_1.png', '/images/main3_2.png', '/images/main3_3.png'] },
-    { id: 2, side: 'right', initialY: 30, xOffset: 100, image: '/images/sign2.webp', popupImages: ['/images/main4_1.png', '/images/main4_2.png', '/images/main4_3.png'] },
-    { id: 3, side: 'left', initialY: -30, xOffset: -40, image: '/images/sign3.webp', popupImages: ['/images/main1_1.png', '/images/main1_2.png', '/images/main1_3.png'] },
-    { id: 4, side: 'right', initialY: -80, xOffset: -10, image: '/images/sign4.webp', popupImages: ['/images/main2_1.png', '/images/main2_2.png', '/images/main2_3.png'] },
-    { id: 5, side: 'left', initialY: -120, xOffset: 100, image: '/images/sign5.webp', popupImages: ['/images/free1_1.png', '/images/free1_2.png']  },
-    { id: 6, side: 'right', initialY: -160, xOffset: -160, image: '/images/sign6.webp', popupImages: ['/images/free3_1.png', '/images/free3_2.png'] },
-    { id: 7, side: 'left', initialY: -200, xOffset: 240, image: '/images/sign7.webp', popupImages: ['/images/free2_1.png', '/images/free2_2.png'] },
-    { id: 8, side: 'right', initialY: -250, xOffset: -230, image: '/images/sign8.webp' },
-    { id: 9, side: 'left', initialY: -290, xOffset: 410, image: '/images/sign9.webp' },
-    { id: 10, side: 'right', initialY: -349, xOffset: -350, image: '/images/sign10.webp' }
+    { id: 1, side: 'left', initialY: 70, xOffset: -140, image: '/images/sign1.webp', popupImages: ['/images/main3_1.webp', '/images/main3_2.webp', '/images/main3_3.webp'] },
+    { id: 2, side: 'right', initialY: 30, xOffset: 100, image: '/images/sign2.webp', popupImages: ['/images/main4_1.webp', '/images/main4_2.webp', '/images/main4_3.webp'] },
+    { id: 3, side: 'left', initialY: -30, xOffset: -40, image: '/images/sign3.webp', popupImages: ['/images/main1_1.webp', '/images/main1_2.webp', '/images/main1_3.webp'] },
+    { id: 4, side: 'right', initialY: -80, xOffset: -10, image: '/images/sign4.webp', popupImages: ['/images/main2_1.webp', '/images/main2_2.webp', '/images/main2_3.webp'] },
+    { id: 5, side: 'left', initialY: -120, xOffset: 100, image: '/images/sign5.webp', popupImages: ['/images/free1_1.webp', '/images/free1_2.webp']  },
+    { id: 6, side: 'right', initialY: -160, xOffset: -160, image: '/images/sign6.webp', popupImages: ['/images/free6_1.webp', '/images/free6_2.webp'] },
+    { id: 7, side: 'left', initialY: -200, xOffset: 240, image: '/images/sign7.webp', popupImages: ['/images/free2_1.webp', '/images/free2_2.webp'] },
+    { id: 8, side: 'right', initialY: -250, xOffset: -230, image: '/images/sign8.webp', popupImages: ['/images/free5_1.webp', '/images/free5_2.webp'] },
+    { id: 9, side: 'left', initialY: -290, xOffset: 410, image: '/images/sign9.webp', popupImages: ['/images/free4_1.webp', '/images/free4_2.webp', '/images/free4_3.webp'] },
+    { id: 10, side: 'right', initialY: -349, xOffset: -350, image: '/images/sign10.webp', popupImages: ['/images/free3_1.webp', '/images/free3_2.webp'] }
   ], []);
 
   const calcYMove = useCallback((initialY, progress) => initialY + progress * Y_MOVE_AMOUNT, []);
