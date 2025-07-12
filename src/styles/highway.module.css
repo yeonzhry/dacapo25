@@ -2,7 +2,7 @@
 
 
 .scrollContainer {
-  height: 340vh;
+  height: 340dvh;
   position: relative;
   z-index: 1;
 }
@@ -13,7 +13,7 @@
   left: 0;
   width: 100%;
   /* height: calc(var(--vh, 1vh) * 100); fallback */
-  height: 100lvh; /* modern */
+  height: 100dvh; /* modern */
   overflow: hidden;
   z-index: 1;
 }
@@ -31,7 +31,7 @@
 .bg {
   position: absolute;
   width: 100vw;
-  height: 100lvh;
+  height: 100dvh;
   object-fit: cover;
   top: 0;
   left: 0;
@@ -43,7 +43,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100lvh;
+  height: 100dvh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -55,8 +55,8 @@
 .road {
   position: absolute;
   width: 100vw;
-  height: 100lvh;
-  top: -4lvh;
+  height: 100dvh;
+  top: -4dvh;
   z-index: 5;
 }
 
@@ -70,35 +70,35 @@
 }
 
 .img1 { position: absolute; width: 100vw; z-index: 2; top: 7dvh; pointer-events: none;}
-.img2 { position: absolute; width: 100vw; top: 12lvh; pointer-events: none;}
-.img3 { position: absolute; width: 100vw; top: 10lvh; pointer-events: none;}
-.img4 { position: absolute; width: 100vw; top: 10lvh; pointer-events: none;}
-.img5 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
-.img6 { position: absolute; width: 100vw; top: 10lvh; pointer-events: none;}
-.img7 { position: absolute; width: 100vw; top: 14lvh; pointer-events: none;}
-.img8 { position: absolute; width: 100vw; top: 12lvh; pointer-events: none;}
-.img9 { position: absolute; width: 100vw; top: 13lvh; pointer-events: none;}
-.img10 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
-.img11 { position: absolute; width: 100vw; top: 15lvh; pointer-events: none;}
-.img12 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
-.img13 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
-.img14 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
-.img15 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
-.img16 { position: absolute; width: 100vw; top: 16lvh; pointer-events: none;}
+.img2 { position: absolute; width: 100vw; top: 12dvh; pointer-events: none;}
+.img3 { position: absolute; width: 100vw; top: 10dvh; pointer-events: none;}
+.img4 { position: absolute; width: 100vw; top: 10dvh; pointer-events: none;}
+.img5 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
+.img6 { position: absolute; width: 100vw; top: 10dvh; pointer-events: none;}
+.img7 { position: absolute; width: 100vw; top: 14dvh; pointer-events: none;}
+.img8 { position: absolute; width: 100vw; top: 12dvh; pointer-events: none;}
+.img9 { position: absolute; width: 100vw; top: 13dvh; pointer-events: none;}
+.img10 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
+.img11 { position: absolute; width: 100vw; top: 15dvh; pointer-events: none;}
+.img12 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
+.img13 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
+.img14 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
+.img15 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
+.img16 { position: absolute; width: 100vw; top: 16dvh; pointer-events: none;}
 /* .img17 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img18 { position: absolute; width: 100vw; height: 100lvh; top: -4lvh; }
 .img19 { position: absolute; width: 100vw; bottom: 0; } */
-.img20 { position: fixed; width: 100vw; z-index: 10; bottom: 0; pointer-events: none;}
-.img21 { position: fixed; width: 100vw; z-index: 10; bottom: 0; pointer-events: none;}
-.img22 { position: absolute; width: 100vw; top: 10lvh; pointer-events: none;}
-.img23 { position: absolute; width: 100vw; top: 10lvh; pointer-events: none;}
-.img24 { position: absolute; width: 100vw; top: 10lvh; pointer-events: none;}
-.img25 { position: fixed; width: 100vw; z-index: 10; bottom: 0; pointer-events: none;}
-.img26 { position: fixed; width: 100vw; z-index: 10; bottom: 18lvh; pointer-events: none;}
+.img20 { position: fixed; width: 100vw; z-index: 10; bottom: 0dvh; pointer-events: none;}
+.img21 { position: fixed; width: 100vw; z-index: 10; bottom: 0dvh; pointer-events: none;}
+.img22 { position: absolute; width: 100vw; top: 10dvh; pointer-events: none;}
+.img23 { position: absolute; width: 100vw; top: 10dvh; pointer-events: none;}
+.img24 { position: absolute; width: 100vw; top: 10dvh; pointer-events: none;}
+.img25 { position: fixed; width: 100vw; z-index: 10; bottom: 0dvh; pointer-events: none;}
+.img26 { position: fixed; width: 100vw; z-index: 10; bottom: 18dvh; pointer-events: none;}
 
 .sign {
   position: absolute;
-  top: 40lvh;
+  top: 40dvh;
   left: 50%;
   transition: all 0.1s ease-out;
   z-index: 1;
@@ -121,7 +121,7 @@
     z-index: 9999;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 30lvh;
+    bottom: 30dvh;
 }
 
 
