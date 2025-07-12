@@ -53,9 +53,9 @@
 }
 
 .road {
-  position: absolute;
+  position: fixed;
   width: 100vw;
-  height: 100dvh;
+  height: 100lvh;
   top: -4lvh;
   z-index: 5;
 }
