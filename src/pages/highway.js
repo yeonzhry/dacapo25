@@ -102,10 +102,14 @@ const Highway = () => {
       };
       return acc;
     }, {});
+
   }, [visibleSigns, calcYMove]);
+
+  const [popupImages, setPopupImages] = useState([]);
 
   const handleSignClick = useCallback((sign) => {
     setSelectedSign(sign);
+    setPopupImages([...sign.popupImages]); // 순서 고정
     setPopupVisible(true);
   }, []);
 
@@ -170,23 +174,24 @@ const Highway = () => {
       </div>
 
       {popupVisible && selectedSign && (
-        <div className={styles.popupOverlay} onClick={handlePopupBackgroundClick}>
-          <div className={styles.popupContent}>
-            <button className={styles.closeButton} onClick={closePopup}>×</button>
-            <div className={styles.slider}>
-              {selectedSign.popupImages?.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`popup-${i}`}
-                  className={styles.popupImage}
-                  loading="lazy"
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+  <div className={styles.popupOverlay} onClick={handlePopupBackgroundClick}>
+    <div className={styles.popupContent}>
+      <button className={styles.closeButton} onClick={closePopup}>×</button>
+      <div className={styles.slider}>
+        {popupImages.map((img, i) => (
+          <img
+            key={i}
+            src={img}
+            alt={`popup-${i}`}
+            className={styles.popupImage}
+            loading="lazy"
+          />
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

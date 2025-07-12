@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react'; // useEffect import 되어야 함
 import styles from '../styles/setlist.module.css';
 
 const SetlistPage = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' }); // 또는 behavior: 'smooth'
+  }, []);
   return (
     <div className={styles.container}>
       <img src="/images/bg3.webp" alt="bg" className={styles.bg} />
