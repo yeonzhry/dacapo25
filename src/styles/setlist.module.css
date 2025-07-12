@@ -18,11 +18,19 @@
   opacity: 1;
 }
 
-.img1 {
-  position: fixed;
+.bgFilter {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100lvh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
 }
+
 
 .content {
   margin: 0 auto;
@@ -36,6 +44,7 @@
   margin-bottom: 40px;
   font-family: BMKkubulim;
   font-size: 3rem;
+  z-index: 10;
 
 }
 
@@ -48,7 +57,7 @@
   color: #000;
   display: inline-block;
   font-family: BMKkubulim;
-
+  z-index: 10;
 
 }
 
@@ -56,6 +65,7 @@
   /* background-color: rgba(255, 255, 255, 0.08); */
   padding: 20px;
   border-radius: 12px;
+  z-index: 10;
 }
 
 
@@ -64,6 +74,7 @@
   color: #000;
   margin-bottom: 10px;
   font-family: BMKkubulim;
+  z-index: 10;
 
 }
 
@@ -74,4 +85,5 @@
   font-size: 1rem;
   line-height: 1.8;
   font-family: BMKkubulim;
+  z-index: 10;
 }

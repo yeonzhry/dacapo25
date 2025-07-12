@@ -8,6 +8,8 @@ const SetlistPage = () => {
   return (
     <div className={styles.container}>
       <img src="/images/bg3.webp" alt="bg" className={styles.bg} />
+      <img src="/images/filter.webp" alt="filter" className={styles.bgFilter} loading="lazy" />
+
       {/* <img src="/images/1.webp" alt="bg" className={styles.img1} /> */}
 
 
