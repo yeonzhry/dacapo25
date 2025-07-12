@@ -163,8 +163,8 @@ const Highway = () => {
 })}
 
 
-        <img src="/images/img177.webp" alt="road" className={styles.road} loading="lazy" />
-        {/* <img src="/images/img18.webp" alt="road" className={styles.road} loading="lazy" /> */}
+        <img src="/images/img17.webp" alt="road" className={styles.road} loading="lazy" />
+        <img src="/images/img18.webp" alt="road" className={styles.road} loading="lazy" />
         <img src="/images/filter.webp" alt="filter" className={styles.bgFilter} loading="lazy" />
         <img src="/images/setlist.webp" alt="setlist" className={styles.setlist} onClick={handleSetlistClick} />
       </div>
