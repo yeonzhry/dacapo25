@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+.backButton {
+  position: fixed;
+  top: 5%;
+  left: 4%;
+  width: 25%;
+  height: auto;
+  cursor: pointer;
+  z-index: 10000;
+}
+
 .bg {
   position: fixed;
   top: 0;

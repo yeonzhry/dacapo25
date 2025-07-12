@@ -9,6 +9,10 @@ const X_MOVE_AMOUNT = 1200;
 const Highway = () => {
   const navigate = useNavigate();
 
+  const handleBack = () => {
+    navigate(-1); // 또는 원하는 경로 예: navigate('/')
+  };
+
   const progressRef = useRef(0);
   const [, forceRender] = useState(0);
 
@@ -139,6 +143,15 @@ const Highway = () => {
 
   return (
     <div className={styles.scrollContainer}>
+   
+        <h1 className={styles.title}>Scroll  and  click  signs!</h1>
+        <img
+          src="/images/back.webp" // ← 너가 만든 이미지 경로
+          alt="back"
+          className={styles.backButton}
+          onClick={handleBack}
+        />
+  
       <div className={styles.viewport}>
         <img src="/images/bg.webp" alt="bg" className={styles.bg} loading="lazy" />
         <img src="/images/img19.webp" alt="car" className={styles.car} loading="lazy" />

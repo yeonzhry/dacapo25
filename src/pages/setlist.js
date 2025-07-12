@@ -1,12 +1,27 @@
 import React, { useEffect } from 'react'; // useEffect import 되어야 함
+import { useNavigate } from 'react-router-dom';
+
 import styles from '../styles/setlist.module.css';
 
 const SetlistPage = () => {
+
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1); // 또는 원하는 경로 예: navigate('/')
+  };
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' }); // 또는 behavior: 'smooth'
   }, []);
   return (
     <div className={styles.container}>
+      <img
+          src="/images/back.webp" // ← 너가 만든 이미지 경로
+          alt="back"
+          className={styles.backButton}
+          onClick={handleBack}
+        />
       <img src="/images/bg3.webp" alt="bg" className={styles.bg} />
       <img src="/images/filter.webp" alt="filter" className={styles.bgFilter} loading="lazy" />
 

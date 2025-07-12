@@ -28,6 +28,31 @@
 } */
 
 
+.backButton {
+  position: fixed;
+  top: 5%;
+  left: 4%;
+  width: 25%;
+  height: auto;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.title {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #323232;
+  z-index: 9999;
+  text-align: center;
+  pointer-events: none;
+  font-family: Allages;
+}
+
+
+
 .bg {
   position: absolute;
   width: 100vw;
