@@ -108,10 +108,19 @@ const Highway = () => {
   const [popupImages, setPopupImages] = useState([]);
 
   const handleSignClick = useCallback((sign) => {
+    const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
+      const extractNumber = (filename) => {
+        const match = filename.match(/_(\d+)/);
+        return match ? parseInt(match[1]) : 0;
+      };
+      return extractNumber(a) - extractNumber(b);
+    });
+  
     setSelectedSign(sign);
-    setPopupImages([...sign.popupImages]); // 순서 고정
+    setPopupImages(sortedImages);
     setPopupVisible(true);
   }, []);
+  
 
   const closePopup = useCallback(() => {
     setPopupVisible(false);
