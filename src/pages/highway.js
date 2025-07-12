@@ -53,12 +53,12 @@ const Highway = () => {
     { id: 2, side: 'right', initialY: 30, xOffset: 100, image: '/images/sign2.webp', popupImages: ['/images/main4_1.png', '/images/main4_2.png', '/images/main4_3.png'] },
     { id: 3, side: 'left', initialY: -30, xOffset: -40, image: '/images/sign3.webp', popupImages: ['/images/main1_1.png', '/images/main1_2.png', '/images/main1_3.png'] },
     { id: 4, side: 'right', initialY: -80, xOffset: -10, image: '/images/sign4.webp', popupImages: ['/images/main2_1.png', '/images/main2_2.png', '/images/main2_3.png'] },
-    { id: 5, side: 'left', initialY: -100, xOffset: 60, image: '/images/sign5.webp' },
-    { id: 6, side: 'right', initialY: -130, xOffset: -120, image: '/images/sign6.webp' },
-    { id: 7, side: 'left', initialY: -180, xOffset: 200, image: '/images/sign7.webp' },
-    { id: 8, side: 'right', initialY: -240, xOffset: -230, image: '/images/sign8.webp' },
-    { id: 9, side: 'left', initialY: -280, xOffset: 400, image: '/images/sign9.webp' },
-    { id: 10, side: 'right', initialY: -340, xOffset: -340, image: '/images/sign10.webp' }
+    { id: 5, side: 'left', initialY: -120, xOffset: 100, image: '/images/sign5.webp', popupImages: ['/images/free1_1.png', '/images/free1_2.png']  },
+    { id: 6, side: 'right', initialY: -160, xOffset: -160, image: '/images/sign6.webp', popupImages: ['/images/free3_1.png', '/images/free3_2.png'] },
+    { id: 7, side: 'left', initialY: -200, xOffset: 240, image: '/images/sign7.webp', popupImages: ['/images/free2_1.png', '/images/free2_2.png'] },
+    { id: 8, side: 'right', initialY: -250, xOffset: -230, image: '/images/sign8.webp' },
+    { id: 9, side: 'left', initialY: -290, xOffset: 410, image: '/images/sign9.webp' },
+    { id: 10, side: 'right', initialY: -349, xOffset: -350, image: '/images/sign10.webp' }
   ], []);
 
   const calcYMove = useCallback((initialY, progress) => initialY + progress * Y_MOVE_AMOUNT, []);
@@ -76,9 +76,11 @@ const Highway = () => {
   const visibleSigns = useMemo(() => {
     return signs.filter(sign => {
       const yMove = calcYMove(sign.initialY, progressRef.current);
-      return isVisible(yMove);
+      const opacity = yMove > -31 ? Math.max(0, Math.min(1, 1 - yMove / 600)) : 0;
+      return isVisible(yMove) && opacity > 0;
     });
   }, [signs, calcYMove, isVisible, renderTrigger]);
+  
 
   const signStyles = useMemo(() => {
     return visibleSigns.reduce((acc, sign) => {
@@ -92,7 +94,9 @@ const Highway = () => {
       acc[sign.id] = {
         transform: `translate3d(${xMove}px, ${yMove}px, 0) scale(${scale})`,
         opacity,
-        zIndex: Math.floor(-yMove + 100),
+        zIndex: sign.side === 'left'
+        ? Math.floor(-sign.initialY + 1000)  // 왼쪽은 yMove에 반대로 크게
+        : Math.floor(-sign.initialY + 1500),  // 오른쪽은 기존대로
         pointerEvents: opacity === 0 ? 'none' : 'auto',
         willChange: opacity > 0 ? 'transform, opacity' : 'auto',
       };
@@ -142,17 +146,22 @@ const Highway = () => {
         <img src="/images/img25.webp" alt="img25" className={styles.img25} loading="lazy" />
         <img src="/images/img26.webp" alt="img26" className={styles.img26} loading="lazy" />
 
-        {visibleSigns.map((sign) => (
-          <div
-            key={sign.id}
-            className={styles.sign}
-            style={signStyles[sign.id]}
-            onClick={() => handleSignClick(sign)}
-          >
-            <img src={sign.image} alt={`Sign ${sign.id}`} className={styles.signBoard} loading="lazy" />
-            <div className={styles.clickArea}></div>
-          </div>
-        ))}
+        {visibleSigns.map(sign => {
+  const style = signStyles[sign.id];
+  if (!style || style.opacity === 0) return null;
+  return (
+    <div
+      key={sign.id}
+      className={styles.sign}
+      style={style}
+      onClick={() => handleSignClick(sign)}
+    >
+      <img src={sign.image} alt={`Sign ${sign.id}`} className={styles.signBoard} loading="lazy" />
+      <div className={styles.clickArea}></div>
+    </div>
+  );
+})}
+
 
         <img src="/images/img17.webp" alt="road" className={styles.road} loading="lazy" />
         <img src="/images/img18.webp" alt="road" className={styles.road} loading="lazy" />
