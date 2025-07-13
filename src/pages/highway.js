@@ -207,18 +207,19 @@ const Highway = () => {
       <div className={styles.slider}>
         {popupImages.map((img, i) => (
           <img
-            key={`${selectedSign.id}-${i}`}
+            key={`${selectedSign.id}-${img}-${i}`}
             src={img}
             alt={`popup-${i}`}
             className={styles.popupImage}
-            loading="lazy"
+            loading="eager"
+            style={{ order: i }}
+            onLoad={() => console.log(`Image ${i} loaded: ${img}`)}
           />
         ))}
       </div>
     </div>
   </div>
 )}
-
     </div>
   );
 };
