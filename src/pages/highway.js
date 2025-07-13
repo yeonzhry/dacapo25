@@ -111,25 +111,35 @@ const Highway = () => {
 
   const [popupImages, setPopupImages] = useState([]);
 
+  const [imageLoadingStates, setImageLoadingStates] = useState({});
+
   const handleSignClick = useCallback((sign) => {
-    // 더 확실한 방법: 직접 순서 매핑
     const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
-      // 각 파일명의 마지막 숫자 추출
       const extractNumber = (filename) => {
         const match = filename.match(/(\d+)\.webp$/);
-        return match ? parseInt(match[1]) : 0;
+        return match ? parseInt(match[1], 10) : 0;
       };
       
       return extractNumber(a) - extractNumber(b);
     });
   
-    // 디버깅용 - 화면에 순서 표시
-    // alert(`정렬 전: ${sign.popupImages.join(', ')}\n정렬 후: ${sortedImages.join(', ')}`);
-  
     setSelectedSign(sign);
     setPopupImages(sortedImages);
+    setImageLoadingStates({}); // 로딩 상태 초기화
     setPopupVisible(true);
+  
+    // 모든 이미지 preload
+    sortedImages.forEach((img, index) => {
+      const image = new Image();
+      image.onload = () => {
+        setImageLoadingStates(prev => ({ ...prev, [index]: true }));
+      };
+      image.src = img;
+    });
   }, []);
+  
+  // 모든 이미지가 로드되었는지 확인
+  const allImagesLoaded = popupImages.every((_, index) => imageLoadingStates[index]);
 
   const closePopup = useCallback(() => {
     setPopupVisible(false);
