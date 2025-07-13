@@ -110,12 +110,17 @@ const Highway = () => {
   }, [visibleSigns, calcYMove]);
 
   const [popupImages, setPopupImages] = useState([]);
-
   const handleSignClick = useCallback((sign) => {
-    // localeCompare + numeric 옵션으로 정렬
-    const sortedImages = [...(sign.popupImages || [])].sort((a, b) =>
-      a.localeCompare(b, undefined, { numeric: true })
-    );
+    // 파일명에서 숫자를 추출하여 정렬
+    const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
+      // 파일명에서 마지막 숫자를 추출 (예: main3_1.webp -> 1)
+      const getNumberFromFilename = (filename) => {
+        const match = filename.match(/_(\d+)\.webp$/);
+        return match ? parseInt(match[1], 10) : 0;
+      };
+      
+      return getNumberFromFilename(a) - getNumberFromFilename(b);
+    });
   
     setSelectedSign(sign);
     setPopupImages(sortedImages);
