@@ -111,18 +111,19 @@ const Highway = () => {
 
   const [popupImages, setPopupImages] = useState([]);
   const handleSignClick = useCallback((sign) => {
-    // 가장 단순하고 확실한 방법: 파일명 전체를 기준으로 정렬
+    // 더 확실한 방법: 직접 순서 매핑
     const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
-      // 파일명 전체를 문자열로 비교하되, 숫자 부분만 고려
-      const aNum = a.substring(a.lastIndexOf('_') + 1, a.lastIndexOf('.'));
-      const bNum = b.substring(b.lastIndexOf('_') + 1, b.lastIndexOf('.'));
+      // 각 파일명의 마지막 숫자 추출
+      const extractNumber = (filename) => {
+        const match = filename.match(/(\d+)\.webp$/);
+        return match ? parseInt(match[1]) : 0;
+      };
       
-      // 숫자로 변환해서 비교
-      return Number(aNum) - Number(bNum);
+      return extractNumber(a) - extractNumber(b);
     });
   
-    console.log('Original images:', sign.popupImages);
-    console.log('Sorted images:', sortedImages);
+    // 디버깅용 - 화면에 순서 표시
+    // alert(`정렬 전: ${sign.popupImages.join(', ')}\n정렬 후: ${sortedImages.join(', ')}`);
   
     setSelectedSign(sign);
     setPopupImages(sortedImages);
