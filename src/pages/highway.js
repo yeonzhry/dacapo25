@@ -110,6 +110,7 @@ const Highway = () => {
   }, [visibleSigns, calcYMove]);
 
   const [popupImages, setPopupImages] = useState([]);
+
   const handleSignClick = useCallback((sign) => {
     // 더 확실한 방법: 직접 순서 매핑
     const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
