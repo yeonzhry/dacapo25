@@ -1,3 +1,50 @@
+.popupOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popupContent {
+  position: relative;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 90vw;
+  max-height: 80vh;
+}
+
+.popupImage {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15x; right: 15px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.prevButton, .nextButton {
+  position: absolute;
+  top: 50%;
+  font-size: 32px;
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.prevButton { left: 10px; }
+.nextButton { right: 10px; }
 
 
 
@@ -172,12 +219,12 @@
   max-width: 90vw;
   max-height: 90vh;
   overflow: hidden;
-  background: white;
+  /* background: white; */
   border-radius: 12px;
   animation: popupSlideIn 0.3s ease-out;
 }
 
-/* 닫기 버튼 */
+닫기 버튼
 .closeButton {
   position: absolute;
   top: 10px;
