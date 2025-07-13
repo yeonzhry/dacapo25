@@ -123,7 +123,7 @@ const Highway = () => {
     });
   
     // 디버깅용 - 화면에 순서 표시
-    // alert(`정렬 전: ${sign.popupImages.join(', ')}\n정렬 후: ${sortedImages.join(', ')}`);
+    alert(`정렬 전: ${sign.popupImages.join(', ')}\n정렬 후: ${sortedImages.join(', ')}`);
   
     setSelectedSign(sign);
     setPopupImages(sortedImages);
