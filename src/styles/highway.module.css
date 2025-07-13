@@ -31,7 +31,7 @@
 .backButton {
   position: fixed;
   top: 5%;
-  left: 4%;
+  left: 3%;
   width: 25%;
   height: auto;
   cursor: pointer;
@@ -218,6 +218,7 @@
   height: auto;
   scroll-snap-align: start;
   object-fit: contain;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 @keyframes bounce {

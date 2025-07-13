@@ -112,19 +112,15 @@ const Highway = () => {
   const [popupImages, setPopupImages] = useState([]);
 
   const handleSignClick = useCallback((sign) => {
-    const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
-      const extractNumber = (filename) => {
-        const match = filename.match(/_(\d+)/);
-        return match ? parseInt(match[1]) : 0;
-      };
-      return extractNumber(a) - extractNumber(b);
-    });
+    // localeCompare + numeric 옵션으로 정렬
+    const sortedImages = [...(sign.popupImages || [])].sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true })
+    );
   
     setSelectedSign(sign);
     setPopupImages(sortedImages);
     setPopupVisible(true);
   }, []);
-  
 
   const closePopup = useCallback(() => {
     setPopupVisible(false);
@@ -195,14 +191,14 @@ const Highway = () => {
         <img src="/images/setlist.webp" alt="setlist" className={styles.setlist} onClick={handleSetlistClick} />
       </div>
 
-      {popupVisible && selectedSign && (
+      {popupVisible && selectedSign && popupImages.length > 0 && (
   <div className={styles.popupOverlay} onClick={handlePopupBackgroundClick}>
     <div className={styles.popupContent}>
       <button className={styles.closeButton} onClick={closePopup}>×</button>
       <div className={styles.slider}>
         {popupImages.map((img, i) => (
           <img
-            key={i}
+            key={`${selectedSign.id}-${i}`}
             src={img}
             alt={`popup-${i}`}
             className={styles.popupImage}
