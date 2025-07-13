@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+.popup-image-container {
+  display: flex;
+  flex-direction: row; /* 또는 row */
+}
+
+.popup-image-container img:nth-child(1) { order: 1; }
+.popup-image-container img:nth-child(2) { order: 2; }
+.popup-image-container img:nth-child(3) { order: 3; }
+/* ... */
+
 .backButton {
   position: fixed;
   top: 5%;
