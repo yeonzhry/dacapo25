@@ -111,16 +111,18 @@ const Highway = () => {
 
   const [popupImages, setPopupImages] = useState([]);
   const handleSignClick = useCallback((sign) => {
-    // 파일명에서 숫자를 추출하여 정렬
+    // 가장 단순하고 확실한 방법: 파일명 전체를 기준으로 정렬
     const sortedImages = [...(sign.popupImages || [])].sort((a, b) => {
-      // 파일명에서 마지막 숫자를 추출 (예: main3_1.webp -> 1)
-      const getNumberFromFilename = (filename) => {
-        const match = filename.match(/_(\d+)\.webp$/);
-        return match ? parseInt(match[1], 10) : 0;
-      };
+      // 파일명 전체를 문자열로 비교하되, 숫자 부분만 고려
+      const aNum = a.substring(a.lastIndexOf('_') + 1, a.lastIndexOf('.'));
+      const bNum = b.substring(b.lastIndexOf('_') + 1, b.lastIndexOf('.'));
       
-      return getNumberFromFilename(a) - getNumberFromFilename(b);
+      // 숫자로 변환해서 비교
+      return Number(aNum) - Number(bNum);
     });
+  
+    console.log('Original images:', sign.popupImages);
+    console.log('Sorted images:', sortedImages);
   
     setSelectedSign(sign);
     setPopupImages(sortedImages);
