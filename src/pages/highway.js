@@ -11,7 +11,7 @@ const signPopupMap = {
   sign2: ['main4_1', 'main4_2', 'main4_3'],
   sign3: ['main1_1', 'main1_2', 'main1_3'],
   sign4: ['main2_1', 'main2_2', 'main2_3'],
-  sign5: ['free1_1', 'free1_2'],
+  sign5: ['free1_1'],
   sign6: ['free6_1', 'free6_2'],
   sign7: ['free2_1', 'free2_2'],
   sign8: ['free5_1', 'free5_2'],

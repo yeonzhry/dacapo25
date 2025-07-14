@@ -80,7 +80,7 @@ const SetlistPage = () => {
             <p className={styles.members}>(v)건호 이은서 (g)건호 윤환 (b)연재 (k)윤서 (d)현종</p>
             <ul className={styles.songList}>
               <li>무희- Vaundy</li>
-              <li>사랑을전하고 싶다든가 - Aimyon </li>
+              {/* <li>사랑을전하고 싶다든가 - Aimyon </li> */}
             </ul>
           </div>
 
